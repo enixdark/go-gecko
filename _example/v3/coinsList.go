@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 
-	gecko "github.com/superoo7/go-gecko/v3"
+	gecko "github.com/enixdark/go-gecko/v3"
 )
 
 func main() {
 	cg := gecko.NewClient(nil)
-	list, err := cg.CoinsList()
+	list, err := cg.CoinsList(false)
 	if err != nil {
 		log.Fatal(err)
 	}
