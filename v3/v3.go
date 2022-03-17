@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/superoo7/go-gecko/format"
-	"github.com/superoo7/go-gecko/v3/types"
+	"github.com/enixdark/go-gecko/format"
+	"github.com/enixdark/go-gecko/v3/types"
 )
 
 var baseURL = "https://api.coingecko.com/api/v3"
@@ -133,8 +133,11 @@ func (c *Client) SimpleSupportedVSCurrencies() (*types.SimpleSupportedVSCurrenci
 }
 
 // CoinsList /coins/list
-func (c *Client) CoinsList() (*types.CoinList, error) {
+func (c *Client) CoinsList(allowPlatform bool) (*types.CoinList, error) {
 	url := fmt.Sprintf("%s/coins/list", baseURL)
+	if allowPlatform == true {
+		url = fmt.Sprintf("%s/coins/list?include_platform=true", baseURL)
+	}
 	resp, err := c.MakeReq(url)
 	if err != nil {
 		return nil, err

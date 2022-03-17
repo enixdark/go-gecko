@@ -1,4 +1,6 @@
-module github.com/superoo7/go-gecko
+module github.com/enixdark/go-gecko
+
+go 1.16
 
 require (
 	github.com/google/pprof v0.0.0-20190404155422-f8f10df84213 // indirect

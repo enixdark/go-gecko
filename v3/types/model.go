@@ -195,9 +195,12 @@ type StatusUpdateItem struct {
 	} `json:"project"`
 }
 
+type Platform map[string]string
+
 // CoinsListItem item in CoinList
 type CoinsListItem struct {
 	coinBaseStruct
+	Platforms Platform `json:"platforms"`
 }
 
 // CoinsMarketItem item in CoinMarket
